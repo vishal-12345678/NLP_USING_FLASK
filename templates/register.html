@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION APP | REGISTER PAGE</title>
+</head>
+<body>
+  <h1>NLP APPLICATION</h1>
+  <h3>Register Here</h3>
+
+  {% if message %}
+      <p style="color:red"> {{ message }}</p>>     # this is optional message omly visibel if we go by registration not directly to login page but after registering
+  {% endif %}                                       # with this template we can write python in html file
+
+
+  <form action="/perform registration" method="post">   # to store data from html in flask we create route in flask which we pass here
+      <label>Name</label><br>
+      <input type="text" name="user_ka_naam" required><br>       # this name is a sticker we will see while recesing Name in jason
+      <label>Email</label><br>
+      <input type="email" name="user_ka_email" required><br>
+      <label>Password</label><br>
+      <input type="password" name="user_ka_password" required ><br><br>
+      <input type="submit" value="register"><br>      # when we press register perform registeraion from flask will get executed
+
+  </form>
+
+  <p>already a member? <a href="/">login here</a> </p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NER</title>
+</head>
+<body>
+<form action="perform ner" method="post">
+    <label>Type your text here </label><br>
+    <textarea name="ner text"></textarea><br>
+    <input type="submit" value="perform ner">
+
+
+</form>>
+
+{% if response %}                                # we are writing this code to print name entities here instead in app.py
+  {% for i in response['entities']: %}
+      <p> {{i['name'] + '==>' + i['category']}} </p>
+  {% endfor %}
+
+{% endif %}
+
+</body>
+</html>
